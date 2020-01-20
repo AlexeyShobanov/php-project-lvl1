@@ -1,7 +1,9 @@
 {
     "name": "alshad/brain-games",
     "description": "First project of PHP programmer course",
-    "bin": ["bin/brain-games"],
+    "bin": [
+	"bin/brain-games"
+	],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,5 +13,14 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+
+    "autoload": {
+        "files": [
+            "src/cli.php"
+        ]
+    },
+
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
