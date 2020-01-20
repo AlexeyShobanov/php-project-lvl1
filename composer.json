@@ -10,5 +10,6 @@
             "email": "shobanov@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {}
 }
