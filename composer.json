@@ -1,0 +1,14 @@
+{
+    "name": "alshad/brain-games",
+    "description": "First project of PHP programmer course",
+    "bin": ["bin/brain-games"],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Shobanov",
+            "email": "shobanov@gmail.com"
+        }
+    ],
+    "require": {}
+}
