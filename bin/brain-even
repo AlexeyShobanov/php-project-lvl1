@@ -10,6 +10,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-//require __DIR__ . '/../vendor/autoload.php';
-
 BrainGames\Cli\run();

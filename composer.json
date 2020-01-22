@@ -2,7 +2,7 @@
     "name": "alshad/brain-games",
     "description": "First project of PHP programmer course",
     "bin": [
-	"bin/brain-games"
+	"bin/brain-even"
 	],
     "type": "library",
     "license": "MIT",
@@ -19,7 +19,8 @@
 
     "autoload": {
         "files": [
-            "src/cli.php"
+            "src/cli.php",
+            "src/even-game.php"
         ]
     },
 
