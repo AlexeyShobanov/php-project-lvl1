@@ -20,7 +20,10 @@
     "autoload": {
         "files": [
             "src/cli.php",
-            "src/even-game.php"
+            "src/general.php",
+            "src/run-game.php",
+            "src/games/even-game.php",
+            "src/games/calc-game.php"
         ]
     },
 
