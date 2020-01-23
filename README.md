@@ -6,8 +6,8 @@
 
 ### Install
 
-1. composer global require alshad/brain-games
+$ composer global require alshad/brain-games
 
 ### Run
 
-1. brain-event
+$ brain-games

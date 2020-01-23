@@ -12,10 +12,10 @@ function isEven($num)
 function evenGame()
 {
     $num = getRandomNum();
-    $questionStr = "{$num}";
+    $question = "{$num}";
     $rightAnswer = isEven($num) ? "yes" : "no";
     return [
-        'guestionStr' => $questionStr,
+        'question' => $question,
         'rightAnswer' => $rightAnswer
     ];
 }

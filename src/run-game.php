@@ -7,25 +7,35 @@ use function cli\prompt;
 use function BrainGames\CalcGame\calcGame;
 use function BrainGames\EvenGame\evenGame;
 
-$callGame = [
-    1 => function () {
-        return evenGame();
-    },
-    2 => function () {
-        return makeCalc();
-    }
-];
+function runGame($indexGame, $numberOfRepetitions = 3)
+{
+    
+    $callGame = [
+        '1' => [
+            'task' => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
+            'gameFunction' => function () {
+                    return evenGame();
+            }
+        ],
+        '2' => [
+            'task' => "What is the result of the expression?",
+            'gameFunction' => function () {
+                    return calcGame();
+            }
+        ]
+    ];
 
-$runGame = function ($codeGame, $times = 3) use ($callGame) {
-    for ($i = 0; $i < $times; $i++) {
-        $dataGame = $callGame[$codeGame]();
-        line("Question: {$dataGame[guestionStr]}");
+    ['task' => $task, 'gameFunction' => $gameFunction] = $callGame[$indexGame];
+    line($task);
+    for ($i = 0; $i < $numberOfRepetitions; $i++) {
+        ['question' => $question, 'rightAnswer' => $rightAnswer] = $gameFunction();
+        line("Question: {$question}");
         $answer = prompt("Your answer");
-        if ($answer !== $dataGame[rightAnswer]) {
-            line("\"{$answer}\" is wrong answer ;(. Correct answer was {$dataGame[rightAnswer]}");
+        if ($answer !== "{$rightAnswer}") {
+            line("\"{$answer}\" is wrong answer ;(. Correct answer was \"{$rightAnswer}\"");
             return false;
         }
         line("Correct!");
     }
     return true;
-};
+}
