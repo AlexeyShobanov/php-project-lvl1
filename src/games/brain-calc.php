@@ -1,10 +1,10 @@
 <?php
 
-namespace BrainGames\CalcGame;
+namespace BrainGames\BrainCalc;
 
 use function BrainGames\General\getRandomNum;
 
-function calcGame()
+function brainCalc()
 {
     $operations = [
         0 => [

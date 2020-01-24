@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\EvenGame;
+namespace BrainGames\BrainEven;
 
 use function BrainGames\General\getRandomNum;
 
@@ -9,7 +9,7 @@ function isEven($num)
     return $num % 2 ? false : true;
 }
 
-function evenGame()
+function brainEven()
 {
     $num = getRandomNum();
     $question = "{$num}";

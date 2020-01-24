@@ -12,8 +12,9 @@ function run()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('Choose the game you want to play:');
-    line('1. EvenGame');
-    line('2. CalcGame');
+    line('1. Brain-Even');
+    line('2. Brain-Calc');
+    line('3. Brain-GCD');
     $gameNumber = prompt('Enter game number');
     
     if (runGame($gameNumber)) {

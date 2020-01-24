@@ -4,8 +4,9 @@ namespace BrainGames\RunGame;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\CalcGame\calcGame;
-use function BrainGames\EvenGame\evenGame;
+use function BrainGames\BrainCalc\brainCalc;
+use function BrainGames\BrainEven\brainEven;
+use function BrainGames\BrainGcd\brainGcd;
 
 function runGame($indexGame, $numberOfRepetitions = 3)
 {
@@ -14,13 +15,19 @@ function runGame($indexGame, $numberOfRepetitions = 3)
         '1' => [
             'task' => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
             'gameFunction' => function () {
-                    return evenGame();
+                    return brainEven();
             }
         ],
         '2' => [
             'task' => "What is the result of the expression?",
             'gameFunction' => function () {
-                    return calcGame();
+                    return brainCalc();
+            }
+        ],
+        '3' => [
+            'task' => "Find the greatest common divisor of given numbers.",
+            'gameFunction' => function () {
+                    return brainGcd();
             }
         ]
     ];
