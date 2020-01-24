@@ -24,7 +24,8 @@
             "src/run-game.php",
             "src/games/brain-even.php",
             "src/games/brain-calc.php",
-             "src/games/brain-gcd.php"
+            "src/games/brain-gcd.php",
+            "src/games/brain-progression.php"
         ]
     },
 

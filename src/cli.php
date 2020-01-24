@@ -15,6 +15,7 @@ function run()
     line('1. Brain-Even');
     line('2. Brain-Calc');
     line('3. Brain-GCD');
+    line('4. Brain-Progression');
     $gameNumber = prompt('Enter game number');
     
     if (runGame($gameNumber)) {

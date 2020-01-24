@@ -7,6 +7,7 @@ use function cli\prompt;
 use function BrainGames\BrainCalc\brainCalc;
 use function BrainGames\BrainEven\brainEven;
 use function BrainGames\BrainGcd\brainGcd;
+use function BrainGames\BrainProgression\brainProgression;
 
 function runGame($indexGame, $numberOfRepetitions = 3)
 {
@@ -14,26 +15,29 @@ function runGame($indexGame, $numberOfRepetitions = 3)
     $callGame = [
         '1' => [
             'task' => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
-            'gameFunction' => function () {
-                    return brainEven();
-            }
+            'gameFunction' => 'BrainGames\BrainEven\brainEven'
         ],
         '2' => [
             'task' => "What is the result of the expression?",
-            'gameFunction' => function () {
-                    return brainCalc();
-            }
+            'gameFunction' => 'BrainGames\BrainEven\brainEven'
         ],
         '3' => [
             'task' => "Find the greatest common divisor of given numbers.",
-            'gameFunction' => function () {
-                    return brainGcd();
-            }
+            'gameFunction' => 'BrainGames\BrainGcd\brainGcd'
+        ],
+        '4' => [
+            'task' => "What number is missing in the progression?",
+            'gameFunction' => 'BrainGames\BrainProgression\brainProgression'
         ]
     ];
 
+    if (intval($indexGame) > count($callGame)) {
+        line("You are mistaken. This number is not in the list of games.");
+        return false;
+    }
+
     ['task' => $task, 'gameFunction' => $gameFunction] = $callGame[$indexGame];
-    line($task);
+    line($gameFunction);
     for ($i = 0; $i < $numberOfRepetitions; $i++) {
         ['question' => $question, 'rightAnswer' => $rightAnswer] = $gameFunction();
         line("Question: {$question}");
