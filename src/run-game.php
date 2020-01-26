@@ -9,7 +9,23 @@ use function BrainGames\BrainEven\brainEven;
 use function BrainGames\BrainGcd\brainGcd;
 use function BrainGames\BrainProgression\brainProgression;
 
-function runGame($indexGame, $numberOfRepetitions = 3)
+
+function runGame($nameGame, $numberOfRepetitions = 3) {
+    for ($i = 0; $i < $numberOfRepetitions; $i++) {
+        ['question' => $question, 'rightAnswer' => $rightAnswer] = $nameGame();
+        line("Question: {$question}");
+        $answer = prompt("Your answer");
+        if ($answer !== "{$rightAnswer}") {
+            line("\"{$answer}\" is wrong answer ;(. Correct answer was \"{$rightAnswer}\"");
+            return false;
+        }
+        line("Correct!");
+    }
+    return true;
+}
+
+
+/* function runGame($indexGame, $numberOfRepetitions = 3)
 {
     
     $callGame = [
@@ -49,4 +65,4 @@ function runGame($indexGame, $numberOfRepetitions = 3)
         line("Correct!");
     }
     return true;
-}
+} */

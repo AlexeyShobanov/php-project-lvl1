@@ -2,7 +2,12 @@
     "name": "alshad/brain-games",
     "description": "First project of PHP programmer course",
     "bin": [
-	"bin/brain-even"
+	"bin/brain-even",
+    "bin/brain-calc",
+    "bin/brain-gcd",
+    "bin/brain-progression",
+    "bin/brain-prime",
+    "bin/brain-games"
 	],
     "type": "library",
     "license": "MIT",
@@ -25,7 +30,8 @@
             "src/games/brain-even.php",
             "src/games/brain-calc.php",
             "src/games/brain-gcd.php",
-            "src/games/brain-progression.php"
+            "src/games/brain-progression.php",
+            "src/games/brain-prime.php"
         ]
     },
 
