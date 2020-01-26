@@ -6,8 +6,7 @@
     "bin/brain-calc",
     "bin/brain-gcd",
     "bin/brain-progression",
-    "bin/brain-prime",
-    "bin/brain-games"
+    "bin/brain-prime"
 	],
     "type": "library",
     "license": "MIT",
