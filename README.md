@@ -10,7 +10,7 @@ $ composer global require alshad/brain-games
 
 ### Game
 
-**1. Game "Parity check"**  
+1. **Game "Parity check"**  
 Answer "yes" if the number is even, otherwise answer "no".  
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
