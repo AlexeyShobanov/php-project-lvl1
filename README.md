@@ -11,16 +11,26 @@ $ composer global require alshad/brain-games
 ### Run game
 
 1. Game "Parity Check"
-`$ brain-even
+`
+$ brain-even
+`
 
 1. Game "Simple Calculations"
-`$ brain-calc
+`
+$ brain-calc
+`
 
 1. Game "The Greatest Common Factor (GCD)"
-`$ brain-gcd
+`
+$ brain-gcd
+`
 
 1. Game "Arithmetic Progression"
-`$brain-progression
+`
+$brain-progression
+`
 
 1. Game "Prime Number"
-`$ brain-prime
+`
+$ brain-prime
+`
