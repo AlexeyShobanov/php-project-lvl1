@@ -10,7 +10,7 @@ $ composer global require alshad/brain-games
 
 ## Game
 
-###Game "Parity check"  
+### "Parity check"
 Answer "yes" if the number is even, otherwise answer "no".  
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
@@ -20,7 +20,7 @@ If the answer is incorrect, the game will end.
 $ brain-even
 `
 
-###Game "Simple calculations"  
+### "Simple calculations"
 Give an answer what expression result?  
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
@@ -30,7 +30,7 @@ If the answer is incorrect, the game will end.
 $ brain-calc
 `
 
-###Game "The Greatest common factor (GCD)"  
+### "The Greatest common factor (GCD)"
 Find the greatest common divisor of given numbers.   
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
@@ -40,7 +40,7 @@ If the answer is incorrect, the game will end.
 $ brain-gcd
 `
 
-###Game "Arithmetic progression"  
+### "Arithmetic progression"
 What number is missing in the progression?   
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
@@ -50,7 +50,7 @@ If the answer is incorrect, the game will end.
 $brain-progression
 `
 
-###Game "Prime Number"  
+### "Prime Number"
 Answer "yes" if given number is prime. Otherwise answer "no".   
 To win, you need to answer a question three times.   
 If the answer is incorrect, the game will end.    
