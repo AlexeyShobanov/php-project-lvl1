@@ -8,54 +8,61 @@
 
 $ composer global require alshad/brain-games
 
+https://asciinema.org/a/gzyzMnbBPx22lqknUtFQO8IyW
+  
 ## Game
 
-### "Parity check"
-Answer "yes" if the number is even, otherwise answer "no".  
-To win, you need to answer a question three times.   
-If the answer is incorrect, the game will end.    
+### "Parity check"    
 
 ##### Run game  
 `
 $ brain-even
-`
-
+`  
+Winning game  
+https://asciinema.org/a/b0mebynPE5j3meFzGOiWkyeTC  
+Lost game  
+https://asciinema.org/a/IogrH8Xv3rvbIwfBM3s2hybWT  
+  
 ### "Simple calculations"
-Give an answer what expression result?  
-To win, you need to answer a question three times.   
-If the answer is incorrect, the game will end.    
 
 ##### Run game  
 `
 $ brain-calc
-`
-
+`  
+Winning game  
+https://asciinema.org/a/Cxl6E0gnvPQO7pNIFw1RLF0GC  
+Lost game  
+https://asciinema.org/a/fb4Au0j65cHnWaTE9IcXsktSy    
+  
 ### "The Greatest common factor (GCD)"
-Find the greatest common divisor of given numbers.   
-To win, you need to answer a question three times.   
-If the answer is incorrect, the game will end.    
 
 ##### Run game  
 `
 $ brain-gcd
-`
+`  
+Winning game  
+https://asciinema.org/a/87DpQgQyC16MV2D7WN2svQt6X  
+Lost game  
+https://asciinema.org/a/4w2PuLJd16CDcbWbWxvsCgeza   
 
-### "Arithmetic progression"
-What number is missing in the progression?   
-To win, you need to answer a question three times.   
-If the answer is incorrect, the game will end.    
+### "Arithmetic progression" 
 
 ##### Run game  
 `
 $brain-progression
-`
-
+`  
+Winning game  
+https://asciinema.org/a/f44vBZc3ehIt6dCjCddiWxbg7  
+Lost game  
+https://asciinema.org/a/stnjD4Nngzcir4T1lSLggNxXv  
+  
 ### "Prime Number"
-Answer "yes" if given number is prime. Otherwise answer "no".   
-To win, you need to answer a question three times.   
-If the answer is incorrect, the game will end.    
 
 ##### Run game  
 `
 $ brain-prime
-`
+`  
+Winning game  
+https://asciinema.org/a/20ZxMjoNOec8N4NlatanMRP6w  
+Lost game  
+https://asciinema.org/a/oCvTTwW69qDJozminwXQ1l44c  

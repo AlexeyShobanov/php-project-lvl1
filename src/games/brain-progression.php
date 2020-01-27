@@ -15,8 +15,8 @@ function makeProgression($num, $incremen)
 
 function brainProgression()
 {
-    $num = getRandomNum();
-    $incremen = getRandomNum();
+    $num = getRandomNum(1, 100);
+    $incremen = getRandomNum(1, 100);
     $missingIndex = getRandomNum(0, 9);
     $progression = makeProgression($num, $incremen);
     $rightAnswer = $progression[$missingIndex];

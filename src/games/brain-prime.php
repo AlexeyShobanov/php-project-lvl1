@@ -19,7 +19,7 @@ function isPrime($num)
 
 function brainPrime()
 {
-    $num = getRandomNum();
+    $num = getRandomNum(3, 100);
     $question = "{$num}";
     $rightAnswer = isPrime($num) ? "yes" : "no";
     return [
