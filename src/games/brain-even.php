@@ -2,20 +2,22 @@
 
 namespace BrainGames\BrainEven;
 
-use function BrainGames\General\getRandomNum;
-
-function isEven($num)
-{
-    return $num % 2 ? false : true;
-}
+use function BrainGames\RunGame\runGame;
 
 function brainEven()
 {
-    $num = getRandomNum();
-    $question = "{$num}";
-    $rightAnswer = isEven($num) ? "yes" : "no";
-    return [
-        'question' => $question,
-        'rightAnswer' => $rightAnswer
-    ];
+    $brainEven = function () {
+        $minNum = 0;
+        $maxNum = 100;
+        $num = mt_rand($minNum, $maxNum);
+        $question = "{$num}";
+        $rightAnswer = ($num % 2) ? "no" : "yes";
+        return [
+            'question' => $question,
+            'rightAnswer' => $rightAnswer,
+            'task' => "Answer \"yes\" if the number is even, otherwise answer \"no\"."
+        ];
+    };
+    
+    return runGame($brainEven, $numberOfRepetitions = 3);
 }

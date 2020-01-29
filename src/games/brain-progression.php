@@ -2,29 +2,35 @@
 
 namespace BrainGames\BrainProgression;
 
-use function BrainGames\General\getRandomNum;
-
-function makeProgression($num, $incremen)
-{
-    $progression[] = $num;
-    for ($i = 1; $i < 10; $i++) {
-        $progression[] = $progression[$i - 1] + $incremen;
-    }
-    return $progression;
-}
+use function BrainGames\RunGame\runGame;
 
 function brainProgression()
 {
-    $num = getRandomNum(1, 100);
-    $incremen = getRandomNum(1, 100);
-    $missingIndex = getRandomNum(0, 9);
-    $progression = makeProgression($num, $incremen);
-    $rightAnswer = $progression[$missingIndex];
-    $progressionStr = implode(' ', $progression);
-    $question = str_replace("{$rightAnswer}", "...", $progressionStr);
+    $makeProgression = function ($num, $incremen, $lengthOfProgression) {
+        $progression = [];
+        for ($i = 0; $i < $lengthOfProgression; $i++) {
+            $progression[] = $num + $i * $incremen;
+        }
+        return $progression;
+    };
 
-    return [
-        'question' => $question,
-        'rightAnswer' => $rightAnswer
-    ];
+    $brainProgression = function () use ($makeProgression) {
+        $minNum = 1;
+        $maxNum = 100;
+        $num = mt_rand($minNum, $maxNum);
+        $incremen = mt_rand($minNum, $maxNum);
+        $lengthOfProgression = 10;
+        $missingIndex = mt_rand(0, $lengthOfProgression - 1);
+        $progression = $makeProgression($num, $incremen, $lengthOfProgression);
+        $rightAnswer = $progression[$missingIndex];
+        $progressionStr = implode(' ', $progression);
+        $question = str_replace("{$rightAnswer}", "...", $progressionStr);
+        return [
+            'question' => $question,
+            'rightAnswer' => $rightAnswer,
+            'task' => "What number is missing in the progression?"
+        ];
+    };
+
+    return runGame($brainProgression, $numberOfRepetitions = 3);
 }
