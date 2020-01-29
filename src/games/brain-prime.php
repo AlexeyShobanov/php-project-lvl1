@@ -4,26 +4,27 @@ namespace BrainGames\BrainPrime;
 
 use function BrainGames\RunGame\runGame;
 
-function brainPrime()
+function isPrime($num)
 {
-    $isPrime = function ($num) {
-        if ($num < 2) {
+    if ($num < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i === 0) {
             return false;
         }
-        for ($i = 2; $i <= sqrt($num); $i++) {
-            if ($num % $i === 0) {
-                return false;
-            }
-        }
-        return true;
-    };
+    }
+    return true;
+}
     
-    $brainPrime = function () use ($isPrime) {
+function brainPrime()
+{
+    $brainPrime = function () {
         $minNum = 3;
         $maxNum = 100;
         $num = mt_rand($minNum, $maxNum);
         $question = "{$num}";
-        $rightAnswer = $isPrime($num) ? "yes" : "no";
+        $rightAnswer = isPrime($num) ? "yes" : "no";
         return [
             'question' => $question,
             'rightAnswer' => $rightAnswer,
@@ -31,5 +32,5 @@ function brainPrime()
         ];
     };
     
-    return runGame($brainPrime, $numberOfRepetitions = 3);
+    return runGame($brainPrime);
 }

@@ -4,21 +4,27 @@ namespace BrainGames\BrainCalc;
 
 use function BrainGames\RunGame\runGame;
 
+function getOperations()
+{
+    $operations = [
+        '+' => function ($a, $b) {
+            return $a + $b;
+        },
+        '-' => function ($a, $b) {
+            return $a - $b;
+        },
+        '*' => function ($a, $b) {
+            return $a * $b;
+        }
+    ];
+
+    return $operations;
+}
+
 function brainCalc()
 {
     $brainCalc = function () {
-        $operations = [
-            '+' => function ($a, $b) {
-                return $a + $b;
-            },
-            '-' => function ($a, $b) {
-                return $a - $b;
-            },
-            '*' => function ($a, $b) {
-                return $a * $b;
-            }
-        ];
-        
+        $operations = getOperations();
         $minNum = 0;
         $maxNum = 100;
         $num1 = mt_rand($minNum, $maxNum);
@@ -38,5 +44,5 @@ function brainCalc()
         ];
     };
     
-    return runGame($brainCalc, $numberOfRepetitions = 3);
+    return runGame($brainCalc);
 }

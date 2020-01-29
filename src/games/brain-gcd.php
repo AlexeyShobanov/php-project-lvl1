@@ -4,20 +4,22 @@ namespace BrainGames\BrainGcd;
 
 use function BrainGames\RunGame\runGame;
 
+function findGcd($num1, $num2)
+{
+    $iter = function ($a, $b) use (&$iter) {
+        $remainder = $b % $a;
+        if ($remainder === 0) {
+            return $a;
+        }
+        return $iter($remainder, $a);
+    };
+    return $iter($num1, $num2);
+}
+    
+
 function brainGcd()
 {
-    $findGcd = function ($num1, $num2) {
-        $iter = function ($a, $b) use (&$iter) {
-            $remainder = $b % $a;
-            if ($remainder === 0) {
-                return $a;
-            }
-            return $iter($remainder, $a);
-        };
-        return $iter($num1, $num2);
-    };
-    
-    $brainGcd = function () use ($findGcd) {
+    $brainGcd = function () {
         $minNum = 0;
         $maxNumForBegin = 100;
         $maxNumForEnd = 1000;
@@ -27,7 +29,7 @@ function brainGcd()
             [$num1, $num2] = [$num2, $num1];
         }
         $question = "{$num1} {$num2}";
-        $rightAnswer = $findGcd($num1, $num2);
+        $rightAnswer = findGcd($num1, $num2);
         return [
             'question' => $question,
             'rightAnswer' => $rightAnswer,
@@ -35,5 +37,5 @@ function brainGcd()
         ];
     };
     
-    return runGame($brainGcd, $numberOfRepetitions = 3);
+    return runGame($brainGcd);
 }

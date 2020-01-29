@@ -19,5 +19,5 @@ function brainEven()
         ];
     };
     
-    return runGame($brainEven, $numberOfRepetitions = 3);
+    return runGame($brainEven);
 }
