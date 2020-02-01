@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\BrainPrime;
+namespace Php\Project\Lvl1\Games\Brain\Prime;
 
-use function BrainGames\RunGame\runGame;
+use function Php\Project\Lvl1\Run\Game\runGame;
 
 function isPrime($num)
 {
@@ -17,20 +17,21 @@ function isPrime($num)
     return true;
 }
     
-function brainPrime()
+function runBrainPrime()
 {
+    define('MIN_NUM', 1);
+    define('MAX_NUM', 100);
+    define('TASK', "Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+
     $brainPrime = function () {
-        $minNum = 3;
-        $maxNum = 100;
-        $num = mt_rand($minNum, $maxNum);
+        $num = mt_rand(MIN_NUM, MAX_NUM);
         $question = "{$num}";
         $rightAnswer = isPrime($num) ? "yes" : "no";
         return [
             'question' => $question,
-            'rightAnswer' => $rightAnswer,
-            'task' => "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
+            'rightAnswer' => $rightAnswer
         ];
     };
     
-    return runGame($brainPrime);
+    return runGame($brainPrime, TASK);
 }

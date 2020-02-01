@@ -1,37 +1,38 @@
 <?php
 
-namespace BrainGames\BrainProgression;
+namespace Php\Project\Lvl1\Games\Brain\Progression;
 
-use function BrainGames\RunGame\runGame;
+use function Php\Project\Lvl1\Run\Game\runGame;
 
-function makeProgression($num, $incremen, $lengthOfProgression)
+function makeProgression($firstNumberGfProgression, $incremen, $lengthOfProgression)
 {
     $progression = [];
     for ($i = 0; $i < $lengthOfProgression; $i++) {
-        $progression[] = $num + $i * $incremen;
+        $progression[] = $firstNumberGfProgression + $i * $incremen;
     }
     return $progression;
 }
 
-function brainProgression()
+function runBrainProgression()
 {
+    define('MIN_NUM', 1);
+    define('MAX_NUM', 100);
+    define('SIZE_PROGRESSION', 10);
+    define('TASK', "What number is missing in the progression?");
+
     $brainProgression = function () {
-        $minNum = 1;
-        $maxNum = 100;
-        $num = mt_rand($minNum, $maxNum);
-        $incremen = mt_rand($minNum, $maxNum);
-        $lengthOfProgression = 10;
-        $missingIndex = mt_rand(0, $lengthOfProgression - 1);
-        $progression = makeProgression($num, $incremen, $lengthOfProgression);
-        $rightAnswer = $progression[$missingIndex];
-        $progressionStr = implode(' ', $progression);
-        $question = str_replace("{$rightAnswer}", "...", $progressionStr);
+        $firstNumberGfProgression = mt_rand(MIN_NUM, MAX_NUM);
+        $incremen = mt_rand(MIN_NUM, MAX_NUM);
+        $missingIndex = mt_rand(0, SIZE_PROGRESSION - 1);
+        $progression = makeProgression($firstNumberGfProgression, $incremen, SIZE_PROGRESSION);
+        $rightAnswer = "{$progression[$missingIndex]}";
+        $progressionText = implode(' ', $progression);
+        $question = str_replace($rightAnswer, "...", $progressionText);
         return [
             'question' => $question,
-            'rightAnswer' => $rightAnswer,
-            'task' => "What number is missing in the progression?"
+            'rightAnswer' => $rightAnswer
         ];
     };
 
-    return runGame($brainProgression);
+    return runGame($brainProgression, TASK);
 }

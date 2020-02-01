@@ -1,23 +1,24 @@
 <?php
 
-namespace BrainGames\BrainEven;
+namespace Php\Project\Lvl1\Games\Brain\Even;
 
-use function BrainGames\RunGame\runGame;
+use function Php\Project\Lvl1\Run\Game\runGame;
 
-function brainEven()
+function runBrainEven()
 {
+    define('MIN_NUM', 0);
+    define('MAX_NUM', 100);
+    define('TASK', "Answer \"yes\" if the number is even, otherwise answer \"no\".");
+
     $brainEven = function () {
-        $minNum = 0;
-        $maxNum = 100;
-        $num = mt_rand($minNum, $maxNum);
+        $num = mt_rand(MIN_NUM, MAX_NUM);
         $question = "{$num}";
         $rightAnswer = ($num % 2) ? "no" : "yes";
         return [
             'question' => $question,
-            'rightAnswer' => $rightAnswer,
-            'task' => "Answer \"yes\" if the number is even, otherwise answer \"no\"."
+            'rightAnswer' => $rightAnswer
         ];
     };
     
-    return runGame($brainEven);
+    return runGame($brainEven, TASK);
 }
