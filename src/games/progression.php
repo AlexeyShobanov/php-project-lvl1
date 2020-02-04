@@ -1,8 +1,8 @@
 <?php
 
-namespace Php\Project\Lvl1\Games\Brain\Progression;
+namespace Alshad\BrainGames\Games\Progression;
 
-use function Php\Project\Lvl1\Run\Game\runGame;
+use function Alshad\BrainGames\Run\Game\runGame;
 
 function makeProgression($firstNumberGfProgression, $incremen, $lengthOfProgression)
 {
@@ -13,14 +13,14 @@ function makeProgression($firstNumberGfProgression, $incremen, $lengthOfProgress
     return $progression;
 }
 
-function runBrainProgression()
+function runProgression()
 {
     define('MIN_NUM', 1);
     define('MAX_NUM', 100);
     define('SIZE_PROGRESSION', 10);
     define('TASK', "What number is missing in the progression?");
 
-    $brainProgression = function () {
+    $runProgression = function () {
         $firstNumberGfProgression = mt_rand(MIN_NUM, MAX_NUM);
         $incremen = mt_rand(MIN_NUM, MAX_NUM);
         $missingIndex = mt_rand(0, SIZE_PROGRESSION - 1);
@@ -34,5 +34,5 @@ function runBrainProgression()
         ];
     };
 
-    return runGame($brainProgression, TASK);
+    return runGame($runProgression, TASK);
 }

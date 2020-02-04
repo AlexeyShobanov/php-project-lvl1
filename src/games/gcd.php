@@ -1,8 +1,8 @@
 <?php
 
-namespace Php\Project\Lvl1\Games\Brain\Gcd;
+namespace Alshad\BrainGames\Games\Gcd;
 
-use function Php\Project\Lvl1\Run\Game\runGame;
+use function Alshad\BrainGames\Run\Game\runGame;
 
 function findGcd($num1, $num2)
 {
@@ -17,14 +17,14 @@ function findGcd($num1, $num2)
 }
     
 
-function runBrainGcd()
+function runGcd()
 {
     define('MIN_NUM', 1);
     define('MAX_FOR_FIRST_NUM', 100);
     define('MAX_FOR_SECOND_NUM', 1000);
     define('TASK', "Find the greatest common divisor of given numbers.");
 
-    $brainGcd = function () {
+    $runGcd = function () {
         $num1 = mt_rand(MIN_NUM, MAX_FOR_FIRST_NUM);
         $num2 = mt_rand(MIN_NUM, MAX_FOR_SECOND_NUM);
         if ($num1 > $num2) {
@@ -38,5 +38,5 @@ function runBrainGcd()
         ];
     };
     
-    return runGame($brainGcd, TASK);
+    return runGame($runGcd, TASK);
 }

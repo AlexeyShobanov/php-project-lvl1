@@ -1,18 +1,20 @@
 <?php
 
-namespace Php\Project\Lvl1\Run\Game;
+namespace Alshad\BrainGames\Run\Game;
 
 use function cli\line;
 use function cli\prompt;
 
-function runGame($game, $task, $numberOfRepetitions = 3)
+define('REPETITION_COUNT', 3);
+
+function runGame($game, $task)
 {
     line('Welcome to the Brain Game!');
     line($task);
     line('');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    for ($i = 0; $i < $numberOfRepetitions; $i++) {
+    for ($i = 0; $i < REPETITION_COUNT; $i++) {
         ['question' => $question, 'rightAnswer' => $rightAnswer] = $game();
         line("Question: {$question}");
         $answer = prompt("Your answer");

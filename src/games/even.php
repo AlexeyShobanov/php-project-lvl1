@@ -1,16 +1,16 @@
 <?php
 
-namespace Php\Project\Lvl1\Games\Brain\Even;
+namespace Alshad\BrainGames\Games\Even;
 
-use function Php\Project\Lvl1\Run\Game\runGame;
+use function Alshad\BrainGames\Run\Game\runGame;
 
-function runBrainEven()
+function runEven()
 {
     define('MIN_NUM', 0);
     define('MAX_NUM', 100);
     define('TASK', "Answer \"yes\" if the number is even, otherwise answer \"no\".");
 
-    $brainEven = function () {
+    $runEven = function () {
         $num = mt_rand(MIN_NUM, MAX_NUM);
         $question = "{$num}";
         $rightAnswer = ($num % 2) ? "no" : "yes";
@@ -20,5 +20,5 @@ function runBrainEven()
         ];
     };
     
-    return runGame($brainEven, TASK);
+    return runGame($runEven, TASK);
 }
