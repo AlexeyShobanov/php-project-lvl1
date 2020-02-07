@@ -4,13 +4,13 @@ namespace Alshad\BrainGames\Games\Even;
 
 use function Alshad\BrainGames\Run\Game\runGame;
 
-function runEven()
+function runGameEven()
 {
     define('MIN_NUM', 0);
     define('MAX_NUM', 100);
     define('TASK', "Answer \"yes\" if the number is even, otherwise answer \"no\".");
 
-    $runEven = function () {
+    $runGameEven = function () {
         $num = mt_rand(MIN_NUM, MAX_NUM);
         $question = "{$num}";
         $rightAnswer = ($num % 2) ? "no" : "yes";
@@ -20,5 +20,5 @@ function runEven()
         ];
     };
     
-    return runGame($runEven, TASK);
+    return runGame($runGameEven, TASK);
 }

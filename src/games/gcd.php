@@ -17,14 +17,14 @@ function findGcd($num1, $num2)
 }
     
 
-function runGcd()
+function runGameGcd()
 {
     define('MIN_NUM', 1);
     define('MAX_FOR_FIRST_NUM', 100);
     define('MAX_FOR_SECOND_NUM', 1000);
     define('TASK', "Find the greatest common divisor of given numbers.");
 
-    $runGcd = function () {
+    $runGameGcd = function () {
         $num1 = mt_rand(MIN_NUM, MAX_FOR_FIRST_NUM);
         $num2 = mt_rand(MIN_NUM, MAX_FOR_SECOND_NUM);
         if ($num1 > $num2) {
@@ -38,5 +38,5 @@ function runGcd()
         ];
     };
     
-    return runGame($runGcd, TASK);
+    return runGame($runGameGcd, TASK);
 }

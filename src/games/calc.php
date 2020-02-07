@@ -4,7 +4,7 @@ namespace Alshad\BrainGames\Games\Calc;
 
 use function Alshad\BrainGames\Run\Game\runGame;
 
-function runCalc()
+function runGameCalc()
 {
     define('MIN_NUM', 0);
     define('MAX_NUM', 100);
@@ -22,7 +22,7 @@ function runCalc()
         }
     ];
 
-    $runCalc = function () use ($operations) {
+    $runGameCalc = function () use ($operations) {
         $num1 = mt_rand(MIN_NUM, MAX_NUM);
         $num2 = mt_rand(MIN_NUM, MAX_NUM);
         $indexOperator = mt_rand(0, count($operations) - 1);
@@ -37,5 +37,5 @@ function runCalc()
         ];
     };
     
-    return runGame($runCalc, TASK);
+    return runGame($runGameCalc, TASK);
 }

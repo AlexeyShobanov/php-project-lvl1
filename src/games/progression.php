@@ -13,19 +13,19 @@ function makeProgression($firstNumberGfProgression, $incremen, $lengthOfProgress
     return $progression;
 }
 
-function runProgression()
+function runGameProgression()
 {
     define('MIN_NUM', 1);
     define('MAX_NUM', 100);
-    define('SIZE_PROGRESSION', 10);
+    define('PROGRESSION_SIZE', 10);
     define('TASK', "What number is missing in the progression?");
 
-    $runProgression = function () {
-        $firstNumberGfProgression = mt_rand(MIN_NUM, MAX_NUM);
+    $runGameProgression = function () {
+        $firstNumberOfProgression = mt_rand(MIN_NUM, MAX_NUM);
         $incremen = mt_rand(MIN_NUM, MAX_NUM);
-        $missingIndex = mt_rand(0, SIZE_PROGRESSION - 1);
-        $progression = makeProgression($firstNumberGfProgression, $incremen, SIZE_PROGRESSION);
-        $rightAnswer = "{$progression[$missingIndex]}";
+        $missingElementIndex = mt_rand(0, PROGRESSION_SIZE - 1);
+        $progression = makeProgression($firstNumberOfProgression, $incremen, PROGRESSION_SIZE);
+        $rightAnswer = strval($progression[$missingElementIndex]);
         $progressionText = implode(' ', $progression);
         $question = str_replace($rightAnswer, "...", $progressionText);
         return [
@@ -34,5 +34,5 @@ function runProgression()
         ];
     };
 
-    return runGame($runProgression, TASK);
+    return runGame($runGameProgression, TASK);
 }

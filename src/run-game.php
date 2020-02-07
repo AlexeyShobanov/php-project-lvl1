@@ -5,17 +5,17 @@ namespace Alshad\BrainGames\Run\Game;
 use function cli\line;
 use function cli\prompt;
 
-define('REPETITION_COUNT', 3);
+define('REPETITIONS_COUNT', 3);
 
-function runGame($game, $task)
+function runGame($runSelectedGame, $task)
 {
     line('Welcome to the Brain Game!');
     line($task);
     line('');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    for ($i = 0; $i < REPETITION_COUNT; $i++) {
-        ['question' => $question, 'rightAnswer' => $rightAnswer] = $game();
+    for ($i = 0; $i < REPETITIONS_COUNT; $i++) {
+        ['question' => $question, 'rightAnswer' => $rightAnswer] = $runSelectedGame();
         line("Question: {$question}");
         $answer = prompt("Your answer");
         if ($answer !== $rightAnswer) {
